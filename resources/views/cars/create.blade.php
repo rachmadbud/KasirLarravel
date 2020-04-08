@@ -46,9 +46,7 @@
                             </ul>
                         </div>
                     @endif
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-    <i class="material-icons right">send</i>
-  </button>
+                    <button class="btn btn-primary" type="submit" name="action">Tambah </button>
                     <a href="/cars" class="btn btn-success"><- Back</a>
 
                 </form>
