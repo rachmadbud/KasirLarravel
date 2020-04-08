@@ -2,7 +2,7 @@
 
 @section('title', 'Buku Mobil')
 
-
+---
 @section('container')
     <div class="container">
         <div class="row">
