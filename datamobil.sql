@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 20, 2020 at 07:12 PM
--- Server version: 10.4.8-MariaDB
--- PHP Version: 7.3.11
+-- Generation Time: Apr 14, 2020 at 10:13 AM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.2.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `kasirlarravel`
+-- Database: `datamobil`
 --
 
 -- --------------------------------------------------------
@@ -31,20 +31,22 @@ SET time_zone = "+00:00";
 CREATE TABLE `cars` (
   `id` int(11) NOT NULL,
   `merk` varchar(20) NOT NULL,
-  `plat` varchar(15) NOT NULL,
-  `harga` int(10) NOT NULL,
+  `plat` varchar(20) NOT NULL,
+  `harga` int(20) NOT NULL,
   `nama` varchar(10) NOT NULL,
   `nohp` varchar(13) NOT NULL,
-  `created_at` date NOT NULL,
-  `deleted_at` date NOT NULL
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `cars`
 --
 
-INSERT INTO `cars` (`id`, `merk`, `plat`, `harga`, `nama`, `nohp`, `created_at`, `deleted_at`) VALUES
-(1, 'Avanza', 'BE 1542 YTS', 40000, 'budi', '081369794290', '2020-03-20', '0000-00-00');
+INSERT INTO `cars` (`id`, `merk`, `plat`, `harga`, `nama`, `nohp`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'Avanza', 'BE 1542 YTS', 40000, 'RQWEQE', '081369794290', '2020-04-08 17:10:52', NULL, NULL),
+(2, 'wewew', 'wewew', 0, 'uhfgghg', '233223', '2020-04-08 10:28:57', '2020-04-08 10:28:57', NULL);
 
 -- --------------------------------------------------------
 
@@ -101,8 +103,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `admin`) VALUES
-(1, 'budi', 'rachamaad@gmail.com', NULL, '$2y$10$YRHa/hL9QSKIwXPzFg19wOwS7rDA4RtWxEIrz5CTLaH2txMtm5aVe', 'hMXszbjyWWondcH0TgcpK72z9WR1J224SqZp2FgoltAwMJtRT2vmPvBT0gI8', '2020-03-21 01:06:31', '2020-03-21 01:06:31', 1),
-(2, 'Manager', 'manager@gmail.com', NULL, '$2y$10$TPly95izbvo3FtZr7HHfaO7kSEL4n8A.VxSUmmNm7V/X5OrHwb4iO', 'fQnrZTnNLG7OM2gQQ3t8iNS4nDfFqDDMJD1W64wXfn3MG0LzI2x1fjzndrRp', '2020-03-21 01:11:24', '2020-03-21 01:11:24', 0);
+(1, 'rachmad', 'rachamaad@gmail.com', NULL, '$2y$10$LS8rm9/s/29ntIUiHhMapecVdY/ZOiDsZJ8tgt1nHUl7MLnUho5WK', NULL, '2020-04-08 10:22:39', '2020-04-08 10:22:39', 1);
 
 --
 -- Indexes for dumped tables
@@ -141,7 +142,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `cars`
 --
 ALTER TABLE `cars`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -153,7 +154,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
